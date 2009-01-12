@@ -6217,3 +6217,17 @@ Processing HomeController#search (for 10.11.12.254 at 2009-01-12 15:00:26) [POST
   Parameters: {"commit"=>"search", "authenticity_token"=>"7c81492ba8fb81fad2df98a4e7a47f5a9c603cbc", "location"=>"Boulder, Co", "distance"=>"10"}
 Rendered home/_results (246.0ms)
 Completed in 2001ms (View: 526, DB: 0) | 200 OK [http://10.11.12.254/search]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-01-12 15:55:50) [GET]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+Rendering template within layouts/standard
+Rendering home/index
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-01-12 15:55:58) [GET]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+Rendering template within layouts/standard
+Rendering home/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
