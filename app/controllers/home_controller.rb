@@ -3,24 +3,36 @@ class HomeController < ApplicationController
   def index
      session[:results] = nil
      @location = session[:location] || "Boulder, Co"
+     @keyword  = session[:keyword]
   end
   
   def search  
-    session[:location] = params[:location]
-    @location = params[:location]
-    @loc = Georb.geocodr(params[:location])
+    session[:location] = params[:location] unless params[:location].empty?
+    session[:keyword] = params[:keyword] unless params[:keyword].empty?
+    
+    @keyword = params[:keyword] unless params[:keyword].empty?
+    @location = params[:location] unless params[:location].empty?
+    @loc      = Georb.geocodr(params[:location]) unless params[:location].empty?
     @distance = params[:distance]
   
     if session[:results]
       @results = []
-      results = Twitter::Search.new.geocode("#{@loc.lat}", "#{@loc.lng}", "#{@distance}mi")
+      results = geocode_and_keyword(@loc, @distance, @keyword ) if @keyword and @loc
+      results = keyword(@keyword)                               if @keyword and not @loc
+      results = geocode(@loc, @distance)                        if @loc and not @keyword
       results.each{|r| @results << r unless session[:results].include?(r.text)}
       session[:results] = @results.map(&:text) + session[:results]
     end
+    
     unless @results
-      @results = Twitter::Search.new.geocode("#{@loc.lat}", "#{@loc.lng}", "#{@distance}mi").per_page(25)
+      @results = geocode_and_keyword(@loc, @distance, @keyword ) if @keyword and @loc
+      @results = keyword(@keyword)                               if @keyword and not @loc
+      @results = geocode(@loc, @distance)                        if @loc and not @keyword
+
+      #@results = Twitter::Search.new.geocode("#{@loc.lat}", "#{@loc.lng}", "#{@distance}mi").per_page(25)
       session[:results] = @results.map(&:text)
     end
+    
     @tweets = 0
     @results.each{|r| @tweets += 1}
     @time = Time.now.strftime("%I:%M %p")
@@ -52,4 +64,17 @@ class HomeController < ApplicationController
   #   @last_time = @tweets.first.created_at
   # 
   # end
+private
+  def geocode(loc, distance)
+    puts "in geocode"
+    Twitter::Search.new.geocode("#{loc.lat}", "#{loc.lng}", "#{distance}mi").per_page(25)
+  end
+  def keyword(keyword)
+    puts "in keyword"
+    Twitter::Search.new.containing(keyword).per_page(25)
+  end
+  def geocode_and_keyword(loc, distance, keyword)
+    puts "doing keyword and geocode"
+    Twitter::Search.new.geocode("#{loc.lat}", "#{loc.lng}", "#{distance}mi").per_page(25).containing(keyword)
+  end
 end

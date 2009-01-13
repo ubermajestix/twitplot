@@ -1,5 +1,5 @@
 <%if @tweets > 0 %>
-<span style="font-size: 7pt; font-weight: bold; line-height:20px"><%= @tweets %> tweet<%= 's' if @tweets > 1 %> from <%= @location %> pulled at <%= @time %> </span><br/>
+<span style="font-size: 7pt; font-weight: bold; line-height:20px"><%= @tweets %> tweet<%= 's' if @tweets > 1 %>  <%= 'from ' + @location if @location %> <%= 'and' if @location and @keyword %> <%= "for '#{@keyword}' " if @keyword %> pulled at <%= @time %> </span><br/>
 <% @results.each do |r| %>
 	<div id="<%= dom_id r %>" style="display:none;">
 		<%= link_to image_tag(r.profile_image_url, :size => "20x20"), "http://twitter.com/#{r.from_user}", :title=>r.from_user, :target=>"_new" %> <%= r.text %><br/>

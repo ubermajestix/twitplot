@@ -1,6 +1,8 @@
 <% form_remote_tag :url=> search_path , :loading=>"$('l').show()", :complete=>"$('l').hide()" do%>
 	<b>city state or zip:</b> <br/>
-	<%= text_field_tag :location, @location %> <b>within</b> <%= select_tag :distance, options_for_select([10, 25, 50]) %> <b>miles</b>
+	<%= text_field_tag :location, @location %> <b>within</b> <%= select_tag :distance, options_for_select([10, 25, 50]) %> <b>miles</b><br/>
+	<b>keyword:</b> <br/>
+	<%= text_field_tag :keyword, @keyword %>
 <div style="margin:-30px 0 0 470px">	<%= submit_tag "search"%>	<%= image_tag '/images/acct_loader.gif', :id=>"l", :style=>"display:none; position:absolute; margin-left:10px" %></div>
 <div style="clear:both;"></div>
 <% end%>

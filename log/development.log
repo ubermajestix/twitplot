@@ -8525,3 +8525,336 @@ Processing HomeController#index (for 127.0.0.1 at 2009-01-12 21:29:05) [GET]
 Rendering template within layouts/standard
 Rendering home/index
 Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-01-13 10:23:07) [GET]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+Rendering template within layouts/standard
+Rendering home/index
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-01-13 10:23:11) [GET]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+Rendering template within layouts/standard
+Rendering home/index
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-01-13 10:25:21) [GET]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+Rendering template within layouts/standard
+Rendering home/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:34:18) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"ibm", "location"=>"Boulder, CO", "distance"=>"10"}
+
+
+NoMethodError (undefined method `join' for "ibm":String):
+    /opt/local/lib/ruby/gems/1.8/gems/twitter-0.4.1/lib/twitter/search.rb:92:in `fetch'
+    /opt/local/lib/ruby/gems/1.8/gems/twitter-0.4.1/lib/twitter/search.rb:97:in `each'
+    /app/controllers/home_controller.rb:34:in `search'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (30.4ms)
+Rendered /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (1.5ms)
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:34:48) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"ibm", "location"=>"", "distance"=>"10"}
+Rendered home/_results (0.4ms)
+Completed in 502ms (View: 3, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:35:20) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"", "location"=>"boulder, co", "distance"=>"10"}
+Rendered home/_results (0.5ms)
+Completed in 472ms (View: 4, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:35:47) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"", "location"=>"boulder, co", "distance"=>"10"}
+Rendered home/_results (0.4ms)
+Completed in 711ms (View: 3, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:37:46) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"", "location"=>"boulder, co", "distance"=>"10"}
+Rendered home/_results (3.7ms)
+Completed in 502ms (View: 10, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:37:53) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"ibm", "location"=>"boulder, co", "distance"=>"10"}
+Rendered home/_results (0.5ms)
+Completed in 376ms (View: 5, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:38:00) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"ibm", "location"=>"", "distance"=>"10"}
+Rendered home/_results (5.0ms)
+Completed in 223ms (View: 13, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:39:03) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"ibm", "location"=>"", "distance"=>"10"}
+Rendered home/_results (0.7ms)
+Completed in 316ms (View: 4, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:39:13) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"ibm", "location"=>"", "distance"=>"10"}
+Rendered home/_results (0.4ms)
+Completed in 254ms (View: 3, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:39:32) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"ibm", "location"=>"", "distance"=>"10"}
+Rendered home/_results (0.5ms)
+Completed in 200ms (View: 3, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:39:38) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"ibm", "location"=>"boulder, co", "distance"=>"10"}
+Rendered home/_results (0.5ms)
+Completed in 577ms (View: 3, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:40:00) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"", "location"=>"boulder, co", "distance"=>"10"}
+Rendered home/_results (1.3ms)
+Completed in 838ms (View: 4, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:40:11) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"i", "location"=>"boulder, co", "distance"=>"10"}
+Rendered home/_results (5.1ms)
+Completed in 738ms (View: 12, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:40:16) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"i", "location"=>"", "distance"=>"10"}
+Rendered home/_results (3.2ms)
+Completed in 982ms (View: 8, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:40:38) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"i", "location"=>"", "distance"=>"10"}
+Rendered home/_results (5.6ms)
+Completed in 280ms (View: 14, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:41:11) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"ibm", "location"=>"", "distance"=>"10"}
+Rendered home/_results (1.0ms)
+Completed in 292ms (View: 4, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:41:20) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"ibm", "location"=>"", "distance"=>"10"}
+Rendered home/_results (0.5ms)
+Completed in 324ms (View: 3, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:41:31) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"ibm", "location"=>"", "distance"=>"10"}
+Rendered home/_results (0.3ms)
+Completed in 211ms (View: 2, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:42:19) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"ibm", "location"=>"", "distance"=>"10"}
+Rendered home/_results (0.4ms)
+Completed in 392ms (View: 2, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:42:25) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"", "location"=>"", "distance"=>"10"}
+
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+    /app/controllers/home_controller.rb:23:in `search'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (27.0ms)
+Rendered /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (9.0ms)
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:42:28) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"", "location"=>"boulder, co", "distance"=>"10"}
+Rendered home/_results (2.2ms)
+Completed in 536ms (View: 6, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:42:33) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"i", "location"=>"boulder, co", "distance"=>"10"}
+Rendered home/_results (0.4ms)
+Completed in 587ms (View: 3, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:42:36) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"i", "location"=>"denver, co", "distance"=>"10"}
+Rendered home/_results (4.4ms)
+Completed in 448ms (View: 11, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:42:41) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"i", "location"=>"", "distance"=>"10"}
+Rendered home/_results (3.7ms)
+Completed in 216ms (View: 9, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:42:56) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"slumdog", "location"=>"", "distance"=>"10"}
+Rendered home/_results (5.0ms)
+Completed in 273ms (View: 13, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-13 10:43:03) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "keyword"=>"slumdog", "location"=>"denver, co", "distance"=>"10"}
+Rendered home/_results (3.8ms)
+Completed in 1132ms (View: 99, DB: 0) | 200 OK [http://localhost/search]
