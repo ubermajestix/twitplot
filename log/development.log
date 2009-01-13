@@ -8476,3 +8476,52 @@ Processing HomeController#index (for 127.0.0.1 at 2009-01-12 21:18:10) [GET]
 Rendering template within layouts/standard
 Rendering home/index
 Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-12 21:27:13) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "location"=>"Boulder, CO", "distance"=>"10"}
+Rendered home/_results (418.7ms)
+Completed in 2476ms (View: 960, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-01-12 21:27:16) [GET]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+Rendering template within layouts/standard
+Rendering home/index
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-12 21:27:19) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "location"=>"Boulder, CO", "distance"=>"10"}
+Rendered home/_results (394.4ms)
+Completed in 5110ms (View: 3584, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-01-12 21:27:32) [GET]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+Rendering template within layouts/standard
+Rendering home/index
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#search (for 127.0.0.1 at 2009-01-12 21:27:34) [POST]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+  Parameters: {"commit"=>"search", "authenticity_token"=>"7183fb88aa63e859a6b14398d7b979a73202a9ab", "location"=>"Boulder, CO", "distance"=>"10"}
+Rendered home/_results (538.7ms)
+Completed in 2923ms (View: 905, DB: 0) | 200 OK [http://localhost/search]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-01-12 21:28:50) [GET]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+Rendering template within layouts/standard
+Rendering home/index
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-01-12 21:29:05) [GET]
+  Session ID: 67cdf6225beacd346ab6eb052505020a
+Rendering template within layouts/standard
+Rendering home/index
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/]
