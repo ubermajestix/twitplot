@@ -1,13 +1,18 @@
 <% form_remote_tag :url=> search_path , :loading=>"$('l').show()", :complete=>"$('l').hide()" do%>
-	location: <br/>
-	<%= text_field_tag :location, @location %> within <%= select_tag :distance, options_for_select([10, 25, 50]) %>miles
-	<%= submit_tag "search"%>	<%= image_tag '/images/acct_loader.gif', :id=>"l", :style=>"display:none; position:absolute; margin-left:10px" %>
+	<b>city state or zip:</b> <br/>
+	<%= text_field_tag :location, @location %> <b>within</b> <%= select_tag :distance, options_for_select([10, 25, 50]) %> <b>miles</b>
+<div style="margin:-30px 0 0 470px">	<%= submit_tag "search"%>	<%= image_tag '/images/acct_loader.gif', :id=>"l", :style=>"display:none; position:absolute; margin-left:10px" %></div>
+<div style="clear:both;"></div>
 <% end%>
 <div id="tagline" style="color:#66CCFF;float:right;font-size:7pt;line-height:15px;">
 	<b>search the twitters by location</b>
 </div>
 <div style="clear:both;"></div>
-<div id="results" style="overflow: auto; height:340px; border: 1px solid #000">
+<div id="results" style="overflow: auto; height:340px; border: 1px solid #aaa">
 
 </div>
-<div style="text-align: right; line-height:12px">&copy; 2009 Tyler Montgomery </div>
+<div style=" line-height:12px; margin-top:5px">
+	<span style="float:right">&copy; 2009 <%= link_to "Tyler Montgomery", "http://ubermajestix.com" %></span> 
+	
+	<%= link_to "how does this work?", "#", :onclick=>"$('about').toggle()" %>
+</div>

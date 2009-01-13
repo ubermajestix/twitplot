@@ -1,6 +1,5 @@
 module Georb
-  # load 'vendor/plugins/geokit/lib/geo_kit/mappable.rb'
-  # require 'mappable'
+   #load 'lib/mappable.rb'
    include GeoKit
 require 'hpricot'
 require 'open-uri'

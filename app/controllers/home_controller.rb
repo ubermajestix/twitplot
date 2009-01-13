@@ -18,7 +18,7 @@ class HomeController < ApplicationController
       session[:results] = @results.map(&:text) + session[:results]
     end
     unless @results
-      @results = Twitter::Search.new.geocode("#{@loc.lat}", "#{@loc.lng}", "#{@distance}mi") 
+      @results = Twitter::Search.new.geocode("#{@loc.lat}", "#{@loc.lng}", "#{@distance}mi").per_page(100)
       session[:results] = @results.map(&:text)
     end
     @tweets = 0
@@ -30,5 +30,26 @@ class HomeController < ApplicationController
           page.visual_effect :blind_down, dom_id(r)
         end      
     end
+  end
+  
+  def t2d
+    @loc = Georb.geocodr("Boulder, CO")
+    results = []
+    15.times do |page|
+      results << Twitter::Search.new.geocode("#{@loc.lat}", "#{@loc.lng}", "10mi").per_page(100).page(page+1)
+    end
+    results.flatten!
+
+    puts "=="*45
+    # get text for each tweet
+    @tweets = []
+    results.each{|result| puts result.inspect; result.each{|t| @tweets << t}}
+    puts @tweets.inspect
+    puts "=="*45
+    
+    @text = @tweets.map(&:text)
+    @first_time = @tweets.sort!{|a,b| a.created_at <=> b.created_at}.last.created_at
+    @last_time = @tweets.first.created_at
+
   end
 end
