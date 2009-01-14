@@ -27,7 +27,7 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-
+  config.gem "ubermajestix-twitter", :version => "0.4.2", :source => "http://gems.github.com", :lib => "twitter" 
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -57,7 +57,7 @@ Rails::Initializer.run do |config|
   config.action_controller.session_store = :mem_cache_store
   config.action_controller.session = {
     :session_key => '_twitloc_session',
-    :expires     => 4.days,
+    :expires     => 4.hours,
     :secret      => 'someotherkindofsecretthatnooneknows'
   }
 

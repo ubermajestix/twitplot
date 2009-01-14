@@ -20,4 +20,14 @@ class ApplicationController < ActionController::Base
   # Uncomment this to filter the contents of submitted sensitive data parameters
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
+  
+  def add_url_markup(text)
+    urls = []
+    users =[]
+    text.split.each{|a| a=~/(http\:\/\/\S+)/; urls << $1}
+    text.split.each{|a| a=~/(\@\S+)/; users << $1}
+    users.compact.each{|user| text.gsub!(user, "<a href='http://twitter.com/#{user.gsub('@','')}' target='_new'>#{user}</a>")}
+    urls.compact.each{|url| text.gsub!(url, "<a href='#{url}' target='_new'>#{url}</a>")}
+    text
+  end
 end

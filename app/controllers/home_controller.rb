@@ -28,11 +28,13 @@ class HomeController < ApplicationController
       @results = geocode_and_keyword(@loc, @distance, @keyword ) if @keyword and @loc
       @results = keyword(@keyword)                               if @keyword and not @loc
       @results = geocode(@loc, @distance)                        if @loc and not @keyword
-
-      #@results = Twitter::Search.new.geocode("#{@loc.lat}", "#{@loc.lng}", "#{@distance}mi").per_page(25)
       session[:results] = @results.map(&:text)
     end
-    
+    puts "=="*45
+    t=[] 
+    @results.each{|r| t << r}
+    puts t.first.inspect
+    puts "=="*45
     @tweets = 0
     @results.each{|r| @tweets += 1}
     @time = Time.now.strftime("%I:%M %p")

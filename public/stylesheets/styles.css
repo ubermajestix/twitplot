@@ -177,7 +177,10 @@ div#content {
 div#logo{ margin:-85px 0 -25px -80px;}
 input{font-size:19px;}
 select{font-size:19px;}
-
+div#advertising{width: 728px;
+margin-left: auto;
+margin-right: auto;
+margin-top:10px;}
 
 
 /********** rounded corners **********/
