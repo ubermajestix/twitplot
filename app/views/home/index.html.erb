@@ -1,3 +1,4 @@
+hello!
 <% form_remote_tag :url=> search_path , :loading=>"$('l').show()", :complete=>"$('l').hide()" do%>
 	<b>city state or zip:</b> <br/>
 	<%= text_field_tag :location, @location %> <b>within</b> <%= select_tag :distance, options_for_select([10, 25, 50]) %> <b>miles</b><br/>

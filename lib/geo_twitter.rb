@@ -23,18 +23,18 @@ module GeoTwitter
   
     def geocode( opts={} )
       raise "need latitude, longitude, and a distance" unless opts[:lat] and opts[:lng] and opts[:distance]
-      Twitter::Search.new.geocode("#{opts[:lat]}", "#{opts[:lng]}", "#{opts[:distance]}mi").per_page(opts[:per_page] || 25)
+      Twitter::Search.new.geocode("#{opts[:lat]}", "#{opts[:lng]}", "#{opts[:distance]}mi").per_page(opts[:per_page] || 25).page(opts[:page] || 1)
     end
   
     def keyword( opts={} )
       raise "need keyword" unless opts[:keyword]
-      Twitter::Search.new.containing(opts[:keyboard]).per_page(opts[:per_page] || 25)
+      Twitter::Search.new.containing(opts[:keyboard]).per_page(opts[:per_page] || 25).page(opts[:page] || 1)
     end
   
     def geocode_and_keyword( opts={} )
       raise "need latitude, longitude, and a distance" unless opts[:lat] and opts[:lng] and opts[:distance]
       raise "need keyword" unless opts[:keyword]
-      Twitter::Search.new.geocode("#{opts[:lat]}", "#{opts[:lng]}", "#{opts[:distance]}mi").per_page(opts[:per_page] || 25).containing(opts[:keyword])
+      Twitter::Search.new.geocode("#{opts[:lat]}", "#{opts[:lng]}", "#{opts[:distance]}mi").per_page(opts[:per_page] || 25).containing(opts[:keyword]).page(opts[:page] || 1)
     end
     
     # returns an array with:
@@ -44,9 +44,9 @@ module GeoTwitter
       @loc = geo_locate(opts[:location])
       results = []
       15.times do |page|
-        results << geocode(:lat => @loc[:lat], :lng => @loc[:lng], :distance => (opts[:distance] || 10), :per_page=>100 ) if @loc and not opts[:keyword]
-        results << keyword(:keyword=>opts[:keyword], :per_page=>100) if opts[:keyword] and not @loc
-        results << geocode_and_keyword(:keyword=>opts[:keyword], :lat => @loc[:lat], :lng => @loc[:lng], :distance => (opts[:distance] || 10), :per_page=>100 ) if @loc and opts[:keyword]
+        results << geocode(:lat => @loc[:lat], :lng => @loc[:lng], :distance => (opts[:distance] || 10), :per_page=>100, :page=>page+1 ) if @loc and not opts[:keyword]
+        results << keyword(:keyword=>opts[:keyword], :per_page=>100, :page=>page+1) if opts[:keyword] and not @loc
+        results << geocode_and_keyword(:keyword=>opts[:keyword], :lat => @loc[:lat], :lng => @loc[:lng], :distance => (opts[:distance] || 10), :per_page=>100, :page=>page+1 ) if @loc and opts[:keyword]
       end
       results.flatten!
       
@@ -57,7 +57,9 @@ module GeoTwitter
       # get time range of tweets
        @first_time = @tweets.sort!{|a,b| a.created_at <=> b.created_at}.last.created_at
        @last_time = @tweets.first.created_at    
-       
+       puts "=="*45
+       puts "timeframe of tweets for #{opts[:location]} #{opts[:keyword]}: #{(@first_time - @last_time).to_f/60/60} hours"
+       puts "=="*45
       return [@tweets, @first_time, @last_time]
     end
     
