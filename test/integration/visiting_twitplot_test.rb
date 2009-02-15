@@ -2,7 +2,7 @@ require File.expand_path(File.dirname(__FILE__)+'/../test_helper')
 
 class VisitingTwitplotTest < ActionController::IntegrationTest
   # Replace this with your real tests.
-  test "the truth" do
+  test "visiting / and clicking search" do
     visit '/'
     assert_have_selector 'div#about'
     assert_have_selector 'div#results'

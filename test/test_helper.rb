@@ -1,8 +1,7 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'test_help'
-require 'webrat'
-require 'webrat/selenium'
+require 'spec'
 
 class Test::Unit::TestCase
   self.use_transactional_fixtures = true
@@ -16,27 +15,13 @@ class Test::Unit::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
 if ENV['SELENIUM']
-  module ActionController #:nodoc:
-    IntegrationTest.class_eval do
-      include Webrat::Selenium::Methods
-      include Webrat::Selenium::Matchers
-    end
-  end
+  require 'webrat/selenium'
+  Webrat.configuration.application_port = 4567
+  Webrat.configuration.application_environment = 'test'
+  Webrat.configuration.mode = :selenium
+else
+  require 'webrat/rails'
+  Webrat.configuration.mode = :rails
 end
-
-Webrat.configure do |config|
-  if ENV['SELENIUM']
-    module ActionController #:nodoc:
-      IntegrationTest.class_eval do
-        include Webrat::Selenium::Methods
-        include Webrat::Selenium::Matchers
-      end
-    end
-    config.mode = :selenium
-  else
-    config.mode = :rails
-  end
-end
-
-

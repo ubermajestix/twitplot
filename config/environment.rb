@@ -54,7 +54,7 @@ Rails::Initializer.run do |config|
   # If you change this key, all old sessions will become invalid!
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
-  config.action_controller.session_store = :mem_cache_store
+  #config.action_controller.session_store = :mem_cache_store
   config.action_controller.session = {
     :session_key => '_twitloc_session',
     :expires     => 4 * 3600,
@@ -74,4 +74,8 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   # Please note that observers generated using script/generate observer need to have an _observer suffix
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
+#  config.gem "atmos-webrat", :lib => "webrat", :source => "http://gems.github.com"
+  config.gem "ubermajestix-twitter", :lib => "twitter", :source => "http://gems.github.com"
+  config.gem "rspec", :lib => "spec"
+  
 end
