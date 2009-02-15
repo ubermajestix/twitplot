@@ -57,7 +57,7 @@ Rails::Initializer.run do |config|
   config.action_controller.session_store = :mem_cache_store
   config.action_controller.session = {
     :session_key => '_twitloc_session',
-    :expires     => 4.hours,
+    :expires     => 4 * 3600,
     :secret      => 'someotherkindofsecretthatnooneknows'
   }
 
