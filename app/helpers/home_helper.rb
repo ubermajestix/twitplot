@@ -1,6 +1,4 @@
 module HomeHelper
-  
-  
   def add_url_markup(text)
     urls = []
     users =[]

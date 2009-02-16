@@ -15,7 +15,6 @@ require 'open-uri'
        @start.lat = coords[1]
        @start.lng = coords[0]
        @start.success = true
-       puts @start
        #@start.status = true
       end
       @start

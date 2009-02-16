@@ -49,17 +49,14 @@ module GeoTwitter
         results << geocode_and_keyword(:keyword=>opts[:keyword], :lat => @loc[:lat], :lng => @loc[:lng], :distance => (opts[:distance] || 10), :per_page=>100, :page=>page+1 ) if @loc and opts[:keyword]
       end
       results.flatten!
-      
+
       # get text for each tweet
       @tweets = []
-      results.each{|result| puts result.inspect; result.each{|t| @tweets << t}}
+      results.each{ |result| result.each { |t| @tweets << t } }
 
       # get time range of tweets
-       @first_time = @tweets.sort!{|a,b| a.created_at <=> b.created_at}.last.created_at
-       @last_time = @tweets.first.created_at    
-       puts "=="*45
-       puts "timeframe of tweets for #{opts[:location]} #{opts[:keyword]}: #{(@first_time - @last_time).to_f/60/60} hours"
-       puts "=="*45
+      @first_time = @tweets.sort!{|a,b| a.created_at <=> b.created_at}.last.created_at
+      @last_time = @tweets.first.created_at    
       return [@tweets, @first_time, @last_time]
     end
     

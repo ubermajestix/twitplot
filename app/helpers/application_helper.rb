@@ -1,6 +1,6 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
-  
+
   def advertising
     adbrite = <<-ADS
       <!-- Begin: AdBrite, Generated: 2009-01-14 12:04:22  -->
@@ -18,5 +18,5 @@ module ApplicationHelper
     ADS
     return adbrite
   end
-  
+
 end

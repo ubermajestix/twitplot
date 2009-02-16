@@ -9,6 +9,8 @@ RAILS_GEM_VERSION = '2.2.2' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
+require 'open-uri'
+require 'cgi'
 
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
@@ -77,5 +79,5 @@ Rails::Initializer.run do |config|
 #  config.gem "atmos-webrat", :lib => "webrat", :source => "http://gems.github.com"
   config.gem "ubermajestix-twitter", :lib => "twitter", :source => "http://gems.github.com"
   config.gem "rspec", :lib => "spec"
-  
+  config.gem "hpricot", :lib => "hpricot"
 end
